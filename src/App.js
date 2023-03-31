@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css';
 import Add from './components/Add'
+import City from './components/City'
 
+//refresh button updates city object with new axios request
+//refresh city info upon page load, useeffect
+//let now = date.now
+//if now = date.now { getcities } else { <></>}
 const App = () =>  {
  const [cities, setCities] = useState([])
 
@@ -12,16 +17,17 @@ const App = () =>  {
     console.log(response)
   })
  }
- useEffect(() => getCities, [])
+
+ useEffect(() => {
+ getCities() }, [])
 
   return (
     <div>
-        <Add/>
+         <Add getCities={getCities}/>
         {cities.map((city) => {
           return (
             <>
-            <h1>{city.name}</h1>
-            <h1>{city.time}</h1>
+            <City city={city}/>
             </>
           )
         })}
@@ -32,3 +38,4 @@ const App = () =>  {
 }
 
 export default App;
+
