@@ -27,7 +27,7 @@ const App = () =>  {
         {cities.map((city) => {
           return (
             <>
-            <City city={city}/>
+            <City city={city} getCities={getCities}/>
             </>
           )
         })}

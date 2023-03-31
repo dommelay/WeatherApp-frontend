@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+.citydisplay {
+  border: solid black;
+}
