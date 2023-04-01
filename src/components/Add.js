@@ -49,10 +49,10 @@ const Add = (props) => {
         <div id='addpage'>
             <h1 id="title">Weather App</h1>
             <form onSubmit={handleSubmit}>
-                <lable htmlFor='zip'>Zip Code </lable><br/>
+                <lable htmlFor='zip'>Zip Code</lable><br/>
                 <input type='text' name='zip' onChange={handleZip} value={zip}></input>
-                <lable htmlFor='state'>Country</lable><br/>
-                <input type='text' name='state' onChange={handleState} value={state}></input><br/>
+                <lable htmlFor='state'>Country</lable>
+                <input type='text' name='state' onChange={handleState} value={state}></input>
                 <button type='submit'>Add City</button>
             </form>
         </div>
