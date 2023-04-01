@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Display from './CityDisplay'
 const moment = require('moment')
 
 const City = (props) => {
@@ -36,15 +37,25 @@ const [currentCity, setCurrentCity] = useState(props.city)
             })
         })
     }
+    useEffect(() => {
+        handleRefreshCity();
+    }, [])
     return(
-        <div className='citydisplay'>
-            {currentCity ? <>
-            <h1>{currentCity.name}</h1>
-            <h3>Temperature: {currentCity.temp}</h3>
-            <h3>{currentCity.time}</h3>
-            <img src={"http://openweathermap.org/img/wn/" + currentCity.weatherIcon + "@2x.png"} alt='weather icon'/>
-            <button onClick={handleRefreshCity}>Refresh</button>
-            <button onClick={handleDelete}>Delete</button></>
+        <div>
+            {currentCity ?
+         <div className='citydisplay'>
+            <div class="nav">
+                <button onClick={handleRefreshCity}>Refresh</button>
+                <button onClick={handleDelete}>Delete</button>
+            </div>
+            <div>
+                <h1>{currentCity.name}</h1>
+                <img src={"http://openweathermap.org/img/wn/" + currentCity.weatherIcon + "@2x.png"} alt='weather icon'/>
+                <h3>{currentCity.temp}°</h3>
+                <h3>{currentCity.time}</h3>
+            </div>
+            </div>
+            
             : <></>}
         </div>
     )
