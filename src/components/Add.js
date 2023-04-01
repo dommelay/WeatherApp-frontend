@@ -8,9 +8,11 @@ const Add = (props) => {
   const [city, setCity] = useState({})
 
   const handleZip = (event) => {
+    event.preventDefault()
     setZip(event.target.value)
   }
   const handleState = (event) => {
+    event.preventDefault()
     setState(event.target.value)
   }
 
@@ -35,22 +37,21 @@ const Add = (props) => {
             cloud: response.data.clouds.all
         }
         setCity(newCity)
-        
-    }).then(() => {
-        axios.post('http://localhost:3000/cities', city).then(()=> {
+        axios.post('http://localhost:3000/cities', newCity).then(()=> {
             props.getCities()
         })
     })
- 
   }
+
 
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <input type='text' name='zip' onChange={handleZip}></input>
-                <input type='text' name='state' onChange={handleState}></input>
+                <input type='text' name='zip' onChange={handleZip} value={zip}></input>
+                <input type='text' name='state' onChange={handleState} value={state}></input>
                 <input type='submit'></input>
             </form>
+
         </>
     )
 
