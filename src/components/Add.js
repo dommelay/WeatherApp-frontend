@@ -34,7 +34,8 @@ const Add = (props) => {
             weatherMain: response.data.weather[0].main,
             weatherDescription: response.data.weather[0].description,
             weatherIcon: response.data.weather[0].icon,
-            cloud: response.data.clouds.all
+            cloud: response.data.clouds.all,
+            url: `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${state}&appid=8e6c1243aeb41a312c229cfda8bc51e3&units=imperial`
         }
         setCity(newCity)
         axios.post('http://localhost:3000/cities', newCity).then(()=> {
