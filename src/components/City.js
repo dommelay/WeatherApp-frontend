@@ -47,7 +47,7 @@ const [currentCity, setCurrentCity] = useState(props.city)
          <div className='citydisplay'>
             <div class="nav">
                 <button onClick={handleRefreshCity}>Refresh</button>
-                <button id='deletebttn' onClick={handleDelete}>Delete</button>
+                <button id='deletebttn' onMouseEnter={handleRefreshCity} onClick={handleDelete}>Delete</button>
             </div>
             <div>
                 <h1>{currentCity.name}</h1>
