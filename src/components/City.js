@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import Display from './CityDisplay'
+import Display from './Refresh'
 const moment = require('moment')
 
 const City = (props) => {

@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css';
 import Add from './components/Add'
 import City from './components/City'
+import Refresh from './components/Refresh'
 
 //refresh button updates city object with new axios request
 //refresh city info upon page load, useeffect
@@ -24,7 +25,8 @@ const App = () =>  {
   return (
     <div>
             <Add getCities={getCities}/>
-          <div id="boxes">
+            <Refresh cities={cities} getCities={getCities}/>
+          
         {cities.map((city) => {
           return (
             <div class="citybox">
@@ -32,7 +34,7 @@ const App = () =>  {
             </div>
           )
         })}
-        </div>
+        
     </div>
   );
 }
