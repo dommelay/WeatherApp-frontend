@@ -23,16 +23,16 @@ const App = () =>  {
 
   return (
     <div>
-         <Add getCities={getCities}/>
+            <Add getCities={getCities}/>
+          <div id="boxes">
         {cities.map((city) => {
           return (
-            <>
+            <div class="citybox">
             <City city={city} getCities={getCities}/>
-            </>
+            </div>
           )
         })}
-        <>
-      </>
+        </div>
     </div>
   );
 }

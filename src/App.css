@@ -39,3 +39,24 @@
 .citydisplay {
   border: solid black;
 }
+.citybox {
+padding: 20px 20px 0px 20px;
+}
+#addpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 20px 0px 20px;
+  align-items: center;
+}
+form {
+  display: flex;
+}
+#headerhome {
+  display: inline;
+}
+.nav {
+  float: right;
+  padding: 15px 10px 0px 0px;
+}
+

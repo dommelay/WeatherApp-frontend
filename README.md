@@ -1,3 +1,10 @@
+# notes 
+move delete function to different component
+free api used: https://openweathermap.org/current#one
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
