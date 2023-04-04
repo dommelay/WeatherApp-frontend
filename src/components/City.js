@@ -4,7 +4,6 @@ import Display from './CityDisplay'
 const moment = require('moment')
 
 const City = (props) => {
-const [currentCity, setCurrentCity] = useState(props.city)
 
     const handleDelete = () => {
         axios.delete(`http://localhost:3000/cities/${props.city._id}`).then(() => {
@@ -31,7 +30,6 @@ const [currentCity, setCurrentCity] = useState(props.city)
                 cloud: response.data.clouds.all,
                 url: props.city.url
             }
-            setCurrentCity(updatedCity)
             axios.put(`http://localhost:3000/cities/${props.city._id}`, updatedCity).then(()=> {
                 props.getCities()
             })
@@ -43,17 +41,17 @@ const [currentCity, setCurrentCity] = useState(props.city)
     return(
         <div>
             
-            {currentCity ?
+            {props.city ?
          <div className='citydisplay'>
             <div class="nav">
                 <button onClick={handleRefreshCity}>Refresh</button>
                 <button id='deletebttn' onMouseEnter={handleRefreshCity} onClick={handleDelete}>Delete</button>
             </div>
             <div>
-                <h1>{currentCity.name}</h1>
-                <img src={"http://openweathermap.org/img/wn/" + currentCity.weatherIcon + "@2x.png"} alt='weather icon'/>
-                <h3>{currentCity.temp}°</h3>
-                <h3>{currentCity.time}</h3>
+                <h1>{props.city.name}</h1>
+                <img src={"http://openweathermap.org/img/wn/" + props.city.weatherIcon + "@2x.png"} alt='weather icon'/>
+                <h3>{props.city.temp}°</h3>
+                <h3>{props.city.time}</h3>
             </div>
             </div>
             
