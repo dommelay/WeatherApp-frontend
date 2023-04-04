@@ -5,10 +5,6 @@ import Add from './components/Add'
 import City from './components/City'
 import Refresh from './components/Refresh'
 
-//refresh button updates city object with new axios request
-//refresh city info upon page load, useeffect
-//let now = date.now
-//if now = date.now { getcities } else { <></>}
 const App = () =>  {
  const [cities, setCities] = useState([])
 

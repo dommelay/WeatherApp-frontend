@@ -33,10 +33,10 @@ const Refresh = (props) => {
         }
     })}
     }
-    useEffect(() => {
-        handleRefreshAll();
-        props.getCities();
-    })
+    // useEffect(() => {
+    //     handleRefreshAll();
+    //     props.getCities();
+    // })
     return (
         
         <><button onClick={handleRefreshAll}>Refresh Cities</button></>

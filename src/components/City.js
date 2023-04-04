@@ -8,7 +8,7 @@ const City = (props) => {
 
     const handleShowMore = () => {
         setShowMore(!showMore)
-        handleRefreshCity();
+        // handleRefreshCity();
     }
 
     const handleDelete = () => {
@@ -41,9 +41,9 @@ const City = (props) => {
             })
         })
     }
-    useEffect(() => {
-        handleRefreshCity();
-    }, [])
+    // useEffect(() => {
+    //     handleRefreshCity();
+    // }, [])
     return(
         <div>
             
@@ -57,13 +57,19 @@ const City = (props) => {
             <div>
                 <h1>{props.city.name}</h1>
                 <img src={"http://openweathermap.org/img/wn/" + props.city.weatherIcon + "@2x.png"} alt='weather icon'/>
+                <h2>{props.city.weatherMain}</h2>
                 <h3>{props.city.temp}°</h3>
                 <h3>{props.city.time}</h3>
             </div>
             {showMore ?
             <>
-                <h3>{props.city.tempMin}</h3>
-                <h3>{props.city.tempMax}</h3>
+                <h3>{props.city.weatherDescription}</h3>
+                <h3>High: {props.city.tempMax}°</h3>
+                <h3>Low: {props.city.tempMin}°</h3>
+                <h3>Feels like: {props.city.tempFeels}°</h3>
+                <h3>Wind Speed: {props.city.windSpeed} mph</h3>
+                <h3>Humidity: {props.city.humidity} %</h3>
+                <h3>Cloudiness: {props.city.cloud} %</h3>
                 <button onClick={handleShowMore}>Show Less</button>
             </>
             :<></>}
