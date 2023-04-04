@@ -4,6 +4,12 @@ import Display from './CityDisplay'
 const moment = require('moment')
 
 const City = (props) => {
+    const [showMore, setShowMore] = useState(false)
+
+    const handleShowMore = () => {
+        setShowMore(!showMore)
+        handleRefreshCity();
+    }
 
     const handleDelete = () => {
         axios.delete(`http://localhost:3000/cities/${props.city._id}`).then(() => {
@@ -41,11 +47,12 @@ const City = (props) => {
     return(
         <div>
             
-            {props.city ?
+            
          <div className='citydisplay'>
             <div class="nav">
                 <button onClick={handleRefreshCity}>Refresh</button>
                 <button id='deletebttn' onMouseEnter={handleRefreshCity} onClick={handleDelete}>Delete</button>
+                <button onClick={handleShowMore}>Show More</button>
             </div>
             <div>
                 <h1>{props.city.name}</h1>
@@ -53,9 +60,16 @@ const City = (props) => {
                 <h3>{props.city.temp}°</h3>
                 <h3>{props.city.time}</h3>
             </div>
-            </div>
+            {showMore ?
+            <>
+                <h3>{props.city.tempMin}</h3>
+                <h3>{props.city.tempMax}</h3>
+                <button onClick={handleShowMore}>Show Less</button>
+            </>
+            :<></>}
+        </div>
             
-            : <></>}
+            
         </div>
     )
 }
