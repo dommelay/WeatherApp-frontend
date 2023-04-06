@@ -59,4 +59,7 @@ form {
   float: right;
   padding: 15px 10px 0px 0px;
 }
+#refreshAllBttn {
+  margin-left: 20px;
+}
 

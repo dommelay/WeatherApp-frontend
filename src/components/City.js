@@ -51,7 +51,7 @@ const City = (props) => {
          <div className='citydisplay'>
             <div class="nav">
                 <button onClick={handleRefreshCity}>Refresh</button>
-                <button id='deletebttn' onMouseEnter={handleRefreshCity} onClick={handleDelete}>Delete</button>
+                <button id='deletebttn' onClick={handleDelete}>Delete</button>
                 <button onClick={handleShowMore}>Show More</button>
             </div>
             <div>

@@ -39,7 +39,7 @@ const Refresh = (props) => {
     // })
     return (
         
-        <><button onClick={handleRefreshAll}>Refresh Cities</button></>
+        <><button id="refreshAllBttn" onClick={handleRefreshAll}>Refresh Cities</button></>
     )
 }
 
