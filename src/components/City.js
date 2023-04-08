@@ -44,22 +44,31 @@ const City = (props) => {
     // useEffect(() => {
     //     handleRefreshCity();
     // }, [])
+    useEffect(() => {
+        console.log(props.city)
+    }, [])
     return(
         <div>
             
             
          <div className='citydisplay'>
             <div class="nav">
-                <button onClick={handleRefreshCity}>Refresh</button>
-                <button id='deletebttn' onClick={handleDelete}>Delete</button>
-                <button onClick={handleShowMore}>Show More</button>
+                {/* <button onClick={handleRefreshCity}>Refresh</button> */}
+                <div class='bttns'>
+                    <button id='deletebttn' onClick={handleDelete}>Delete</button>
+                    <button onClick={handleShowMore}>Show More</button>
+                </div>
+                <div>
+                <img src={"http://openweathermap.org/img/wn/" + props.city.weatherIcon + "@2x.png"} alt='weather icon'/>
+                </div>
             </div>
             <div>
-                <h1>{props.city.name}</h1>
-                <img src={"http://openweathermap.org/img/wn/" + props.city.weatherIcon + "@2x.png"} alt='weather icon'/>
+                <h1 class='citytext'>{props.city.name}</h1>
+                <div class='timetemp'>
+                    <h1 class='timetext'>{props.city.time}</h1>
+                    <h1 class='temptext'>{props.city.temp}°</h1>
+                </div>
                 <h2>{props.city.weatherMain}</h2>
-                <h3>{props.city.temp}°</h3>
-                <h3>{props.city.time}</h3>
             </div>
             {showMore ?
             <>

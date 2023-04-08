@@ -62,4 +62,42 @@ form {
 #refreshAllBttn {
   margin-left: 20px;
 }
+.citypic {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  text-align: center;
+  align-items: center;
+}
+.citytext {
+  font-size: 55px;
+  margin: 25px 0px 0px 0px;
+  padding-left: 20px;
+}
+.timetemp {
+ display: flex;
+ align-items: center;
+ 
+}
+img {
+  width: 200px;
+  height: auto;
+}
+.bttns {
+  display: inline;
+  float: right;
+  padding-right: 10px;
+}
+#deletebttn {
+  margin-right: 10px;
+}
+.timetext {
+  padding-left: 20px;
+  font-size: 35px;
+  margin-left: 0px;
+}
+.temptext {
+  font-size: 55px;
+  padding-left: 200px;
+}
 
