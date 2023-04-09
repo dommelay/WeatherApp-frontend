@@ -21,6 +21,11 @@ const City = (props) => {
             const time = response.data.timezone
             const timeMin = time / 60
             const currentTime = moment().utcOffset(timeMin).format("h: mm A")
+            // const image = 'i'
+            // const weatherBack = response.data.weather[0].id
+            // if (weatherBack === 800) {
+            //     const image = 'https://img.freepik.com/free-vector/sky-background-with-rainfall-droplets_1017-32182.jpg?w=2000&t=st=1681054218~exp=1681054818~hmac=965260e24afe56170a5e0d6467e3a881f5e7c68818ed090ab52c25825ba45048'
+            // }
             const updatedCity = {
                 name: response.data.name,
                 temp: response.data.main.temp,
@@ -34,7 +39,8 @@ const City = (props) => {
                 weatherDescription: response.data.weather[0].description,
                 weatherIcon: response.data.weather[0].icon,
                 cloud: response.data.clouds.all,
-                url: props.city.url
+                url: props.city.url,
+                backgroundImageUrl: response.data.weather[0].id
             }
             axios.put(`http://localhost:3000/cities/${props.city._id}`, updatedCity).then(()=> {
                 props.getCities()
@@ -48,38 +54,56 @@ const City = (props) => {
         console.log(props.city)
     }, [])
     return(
-        <div>
-            
-            
-         <div className='citydisplay'>
+        <div>  
+         {/* <div className='citydisplay' style={{ backgroundImage:`url(https://img.freepik.com/free-vector/sky-background-with-rainfall-droplets_1017-32182.jpg?w=2000&t=st=1681054218~exp=1681054818~hmac=965260e24afe56170a5e0d6467e3a881f5e7c68818ed090ab52c25825ba45048)`,backgroundRepeat:"no-repeat", backgroundSize: "cover" }}> */}
+         <div onClick={handleShowMore} className = 'citydisplay'>
             <div class="nav">
                 {/* <button onClick={handleRefreshCity}>Refresh</button> */}
-                <div class='bttns'>
-                    <button id='deletebttn' onClick={handleDelete}>Delete</button>
-                    <button onClick={handleShowMore}>Show More</button>
-                </div>
-                <div>
+                <div class='pic'>
                 <img src={"http://openweathermap.org/img/wn/" + props.city.weatherIcon + "@2x.png"} alt='weather icon'/>
                 </div>
             </div>
-            <div>
-                <h1 class='citytext'>{props.city.name}</h1>
-                <div class='timetemp'>
-                    <h1 class='timetext'>{props.city.time}</h1>
+            <div class='cityinfo'>
+                <div>
+                    <h1 class='citytext'>{props.city.name}</h1>
                     <h1 class='temptext'>{props.city.temp}°</h1>
                 </div>
-                <h2>{props.city.weatherMain}</h2>
+                <div class='timedescrip'>
+                    <h1 class='timetext'>{props.city.time}</h1>
+                    <h2 class='description'>{props.city.weatherMain}</h2>
+                </div>
             </div>
             {showMore ?
             <>
-                <h3>{props.city.weatherDescription}</h3>
-                <h3>High: {props.city.tempMax}°</h3>
-                <h3>Low: {props.city.tempMin}°</h3>
-                <h3>Feels like: {props.city.tempFeels}°</h3>
-                <h3>Wind Speed: {props.city.windSpeed} mph</h3>
-                <h3>Humidity: {props.city.humidity} %</h3>
-                <h3>Cloudiness: {props.city.cloud} %</h3>
-                <button onClick={handleShowMore}>Show Less</button>
+                <div class='properties'>
+                <div class='property'>
+                    <h3>High</h3>
+                    <h1>{props.city.tempMax}°</h1>
+                </div>
+                <div class='property'>
+                    <h3>Low</h3>
+                    <h1>{props.city.tempMin}°</h1>
+                </div>
+                {/* <div class='property'>
+                    <h3>Feels like</h3>
+                    <h1>{props.city.tempFeels}°</h1>
+                </div> */}
+                <div class='property'>
+                    <h3>Wind Speed </h3>
+                    <h1>{props.city.windSpeed} mph</h1>
+                </div>
+                <div class='property'>
+                    <h3>Humidity</h3>
+                    <h1>{props.city.humidity} %</h1>
+                </div>
+                <div class='property'>
+                    <h3>Cloudiness</h3>
+                    <h1>{props.city.cloud} %</h1>
+                </div>
+            </div>
+            <div id='deletebttn'>
+                <button onClick={handleDelete}>Delete City</button>
+            </div>
             </>
             :<></>}
         </div>

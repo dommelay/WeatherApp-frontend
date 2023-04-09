@@ -24,7 +24,8 @@ const Refresh = (props) => {
                     weatherDescription: response.data.weather[0].description,
                     weatherIcon: response.data.weather[0].icon,
                     cloud: response.data.clouds.all,
-                    url: city.url
+                    url: city.url,
+                    backgroundImageUrl: response.data.weather[0].id
                 }
                 axios.put(`http://localhost:3000/cities/${city._id}`, updatedCity).then(()=> {
                     props.getCities()
@@ -39,7 +40,9 @@ const Refresh = (props) => {
     // })
     return (
         
-        <><button id="refreshAllBttn" onClick={handleRefreshAll}>Refresh Cities</button></>
+        <div id="refreshDiv">
+            <button id="refreshAllBttn" onClick={handleRefreshAll}>Refresh Cities</button>
+        </div>
     )
 }
 

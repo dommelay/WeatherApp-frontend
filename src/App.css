@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Open+Sans:wght@400;600&display=swap') ;
 .App {
   text-align: center;
 }
@@ -36,8 +37,13 @@
     transform: rotate(360deg);
   }
 }
+body {
+  background-color: azure;
+  font-family: 'Jost';
+}
 .citydisplay {
   border: solid black;
+  border-radius: 25px;
 }
 .citybox {
 padding: 20px 20px 0px 20px;
@@ -48,6 +54,7 @@ padding: 20px 20px 0px 20px;
   justify-content: space-between;
   padding: 0px 20px 0px 20px;
   align-items: center;
+  text-align: center;
 }
 form {
   display: flex;
@@ -57,10 +64,6 @@ form {
 }
 .nav {
   float: right;
-  padding: 15px 10px 0px 0px;
-}
-#refreshAllBttn {
-  margin-left: 20px;
 }
 .citypic {
   display: flex;
@@ -70,14 +73,9 @@ form {
   align-items: center;
 }
 .citytext {
-  font-size: 55px;
+  font-size: 35px;
   margin: 25px 0px 0px 0px;
-  padding-left: 20px;
-}
-.timetemp {
- display: flex;
- align-items: center;
- 
+  padding-left: 30px;
 }
 img {
   width: 200px;
@@ -89,15 +87,57 @@ img {
   padding-right: 10px;
 }
 #deletebttn {
-  margin-right: 10px;
+  margin: 20px 0px 20px 30px;
 }
 .timetext {
-  padding-left: 20px;
-  font-size: 35px;
-  margin-left: 0px;
+  font-size: 25px;
+  margin: 0px;
 }
 .temptext {
-  font-size: 55px;
-  padding-left: 200px;
+  font-size: 75px;
+  margin: 0px 0px 25px 0px;
+  padding-left: 30px;
 }
+#title {
+  font-size: 45px;
+  margin: 0px;
+}
+label {
+  padding-right: 10px;
+}
+input {
+  margin-right: 10px;
+}
+#refreshDiv {
+  margin: 20px 0px 0px 20px;
+}
+.cityinfo {
+  display: flex;
+  flex-direction: row;
+}
+.description {
+  margin: 5px 0px 0px 0px;
+}
+.timedescrip {
+  padding: 90px 0px 0px 35px;
+}
+button {
+  font-family: 'Jost';
+  color: black;
+  font-size: 15;
+}
+.property {
+  border-radius: 25px;
+  background-color: #ADD8E6;
+  padding: 15px;
+  margin-top: 10px;
+}
+.properties {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px 30px 0px 30px;
+}
+
 

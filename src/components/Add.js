@@ -19,6 +19,7 @@ const Add = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},${state}&appid=8e6c1243aeb41a312c229cfda8bc51e3&units=imperial`).then((response) => {
+      console.log(typeof(response.data.weather[0].id))
         const time = response.data.timezone
         const timeMin = time / 60
         const currentTime = moment().utcOffset(timeMin).format("h: mm A")
@@ -35,7 +36,8 @@ const Add = (props) => {
             weatherDescription: response.data.weather[0].description,
             weatherIcon: response.data.weather[0].icon,
             cloud: response.data.clouds.all,
-            url: `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${state}&appid=8e6c1243aeb41a312c229cfda8bc51e3&units=imperial`
+            url: `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${state}&appid=8e6c1243aeb41a312c229cfda8bc51e3&units=imperial`,
+            backgroundImageUrl: response.data.weather[0].id
         }
         setCity(newCity)
         axios.post('http://localhost:3000/cities', newCity).then(()=> {
@@ -49,9 +51,9 @@ const Add = (props) => {
         <div id='addpage'>
             <h1 id="title">Weather App</h1>
             <form onSubmit={handleSubmit}>
-                <lable htmlFor='zip'>Zip Code </lable><br/>
+                <label htmlFor='zip'>Zip Code</label>
                 <input type='text' name='zip' onChange={handleZip} value={zip}></input>
-                <lable htmlFor='state'>Country </lable>
+                <label htmlFor='state'>Country</label>
                 <input type='text' name='state' onChange={handleState} value={state}></input>
                 <button type='submit'>Add City </button>
             </form>

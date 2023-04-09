@@ -20,8 +20,9 @@ const App = () =>  {
 
   return (
     <div>
+      
             <Add getCities={getCities}/>
-            <Refresh cities={cities} getCities={getCities}/>
+            
           
         {cities.map((city) => {
           return (
@@ -30,6 +31,7 @@ const App = () =>  {
             </div>
           )
         })}
+        <Refresh cities={cities} getCities={getCities}/>
         
     </div>
   );
