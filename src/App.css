@@ -39,11 +39,18 @@
 }
 body {
   background-color: azure;
+  background-image: url('https://img.freepik.com/free-photo/white-cloud-blue-sky_1409-1804.jpg?w=1480&t=st=1681088108~exp=1681088708~hmac=adf86a738c5725325448ae11e157e8378dad1abc684b14a1c1bd47f38fb87ec3');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Jost';
+  color: white;
+}
+#title, label {
+  color: black;
 }
 .citydisplay {
-  border: solid black;
   border-radius: 25px;
+  background-image: linear-gradient(to right, #55aaff, #77ccff);
 }
 .citybox {
 padding: 20px 20px 0px 20px;
@@ -87,7 +94,8 @@ img {
   padding-right: 10px;
 }
 #deletebttn {
-  margin: 20px 0px 20px 30px;
+  margin: 20px 0px 0px 30px;
+  padding-bottom: 20px;
 }
 .timetext {
   font-size: 25px;
@@ -128,9 +136,9 @@ button {
 }
 .property {
   border-radius: 25px;
-  background-color: #ADD8E6;
   padding: 15px;
   margin-top: 10px;
+ 
 }
 .properties {
   display: flex;
