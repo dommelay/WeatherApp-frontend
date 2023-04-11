@@ -126,8 +126,12 @@ input {
 .description {
   margin: 5px 0px 0px 0px;
 }
+.temptime {
+  display: flex;
+  flex-direction: row;
+}
 .timedescrip {
-  padding: 90px 0px 0px 35px;
+  padding: 16px 0px 0px 35px;
 }
 button {
   font-family: 'Jost';

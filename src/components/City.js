@@ -66,12 +66,18 @@ const City = (props) => {
             <div class='cityinfo'>
                 <div>
                     <h1 class='citytext'>{props.city.name}</h1>
-                    <h1 class='temptext'>{props.city.temp}°</h1>
+                    <div class='temptime'>
+                        <div>
+                            <h1 class='temptext'>{props.city.temp}°</h1>
+                        </div>
+                        <div class='timedescrip'>
+                            <h1 class='timetext'>{props.city.time}</h1>
+                            <h2 class='description'>{props.city.weatherMain}</h2>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div class='timedescrip'>
-                    <h1 class='timetext'>{props.city.time}</h1>
-                    <h2 class='description'>{props.city.weatherMain}</h2>
-                </div>
+               
             </div>
             {showMore ?
             <>
