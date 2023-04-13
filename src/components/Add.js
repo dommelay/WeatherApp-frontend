@@ -55,7 +55,7 @@ const Add = (props) => {
                 <input type='text' name='zip' onChange={handleZip} value={zip}></input>
                 <label htmlFor='state'>Country</label>
                 <input type='text' name='state' onChange={handleState} value={state}></input>
-                <button type='submit'>Add City </button>
+                <button id='addcitybttn' type='submit'>Add City </button>
             </form>
         </div>
     )
