@@ -156,6 +156,7 @@ button {
     flex-direction: column;
   }
 }
+
 @media (max-width: 550px) {
   form {
     flex-direction: column;
@@ -165,6 +166,48 @@ button {
     margin-top: 10px;
     width: 75px;
   }
+}
+@media (min-width: 650px) {
+  #newcitybttn{
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .citytext {
+    font-size: 25px;
+  }
+  #title {
+    font-size: 25px;
+  }
+  .temptext {
+    font-size: 40px;
+    margin-bottom: 0px;
+  }
+  .temptime {
+    flex-direction: column;
+  }
+  .timedescrip {
+    padding: 0px 0px 0px 30px;
+    margin-bottom: 10px;
+    /* display: flex; */
+  }
+  .timetext, .description {
+    font-size: 16px;
+  }
+  .description {
+    margin: 0px;
+  }
+  #newcitybttn {
+    display: block;
+  }
+  img {
+    width: 150px;
+    /* z-index: -1; */
+  }
+  /* .citdisplay {
+    z-index: 0;
+  } */
+
 }
 
 
