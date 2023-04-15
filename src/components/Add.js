@@ -6,6 +6,7 @@ const Add = (props) => {
   const [zip, setZip] = useState('')
   const [state, setState] = useState('')
   const [city, setCity] = useState({})
+  const [add, setAdd] = useState(false)
 
   const handleZip = (event) => {
     event.preventDefault()
@@ -15,7 +16,9 @@ const Add = (props) => {
     event.preventDefault()
     setState(event.target.value)
   }
-
+const handleAdd = () => {
+  setAdd(!add)
+}
   const handleSubmit = (event) => {
     event.preventDefault()
     axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},${state}&appid=8e6c1243aeb41a312c229cfda8bc51e3&units=imperial`).then((response) => {
@@ -44,20 +47,30 @@ const Add = (props) => {
             props.getCities()
         })
     })
+    handleAdd();
   }
 
 
     return (
         <div id='addpage'>
             <h1 id="title">Weather App</h1>
-            <button id='newcitybttn'>New City</button>
-            <form onSubmit={handleSubmit}>
+            <button id='newcitybttn' onClick={handleAdd}>New City</button>
+            <form id='form1' onSubmit={handleSubmit}>
                 <label htmlFor='zip'>Zip Code</label>
                 <input type='text' name='zip' onChange={handleZip} value={zip}></input>
                 <label htmlFor='state'>Country</label>
                 <input id='countryinput' type='text' name='state' onChange={handleState} value={state}></input>
                 <button id='addcitybttn' type='submit'>Add City </button>
             </form>
+            {add ? 
+            <form id='form2' onSubmit={handleSubmit}>
+                <label htmlFor='zip'>Zip Code</label>
+                <input type='text' name='zip' onChange={handleZip} value={zip}></input>
+                <label htmlFor='state'>Country</label>
+                <input id='countryinput' type='text' name='state' onChange={handleState} value={state}></input>
+                <button id='addcitybttn' type='submit'>Add City </button>
+            </form>
+            : <></> }
         </div>
     )
     

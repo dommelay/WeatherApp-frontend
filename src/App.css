@@ -117,7 +117,7 @@ input {
   margin-right: 10px;
 }
 #refreshDiv {
-  margin: 20px 0px 0px 20px;
+  margin: 20px 0px 20px 20px;
 }
 .cityinfo {
   display: flex;
@@ -177,7 +177,8 @@ button {
     font-size: 25px;
   }
   #title {
-    font-size: 25px;
+    margin-top: 7px;
+    font-size: 28px;
   }
   .temptext {
     font-size: 40px;
@@ -199,9 +200,14 @@ button {
   }
   #newcitybttn {
     display: block;
+    margin-top: 7px;
+  }
+  #form1 {
+    display: none;
   }
   img {
     width: 150px;
+    padding-top: 15px;
     /* z-index: -1; */
   }
   /* .citdisplay {
