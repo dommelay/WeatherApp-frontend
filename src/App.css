@@ -171,6 +171,9 @@ button {
   #newcitybttn{
     display: none;
   }
+  #form2 {
+    display: none;
+  }
 }
 @media (max-width: 650px) {
   .citytext {
@@ -204,6 +207,9 @@ button {
   }
   #form1 {
     display: none;
+  }
+  #form2 {
+    display: flex;
   }
   img {
     width: 150px;
