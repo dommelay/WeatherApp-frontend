@@ -43,7 +43,7 @@ const handleAdd = () => {
             backgroundImageUrl: response.data.weather[0].id
         }
         setCity(newCity)
-        axios.post('http://localhost:3000/cities', newCity).then(()=> {
+        axios.post('https://domsweatherapp.netlify.app/cities', newCity).then(()=> {
             props.getCities()
         })
     })

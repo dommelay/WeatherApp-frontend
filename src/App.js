@@ -9,7 +9,7 @@ const App = () =>  {
  const [cities, setCities] = useState([])
 
  const getCities = () => {
-  axios.get('http://localhost:3000/cities').then((response) => {
+  axios.get('https://domsweatherapp.netlify.app/cities').then((response) => {
     setCities(response.data)
     console.log(response)
   })
