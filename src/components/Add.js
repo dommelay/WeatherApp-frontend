@@ -43,7 +43,7 @@ const handleAdd = () => {
             backgroundImageUrl: response.data.weather[0].id
         }
         setCity(newCity)
-        axios.post('https://domsweatherapp.netlify.app/cities', newCity).then(()=> {
+        axios.post('https://git.heroku.com/serene-eyrie-94543.git/cities', newCity).then(()=> {
             props.getCities()
         })
     })
