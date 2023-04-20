@@ -57,9 +57,9 @@ const handleAdd = () => {
             <button id='newcitybttn' onClick={handleAdd}>New City</button>
             <form id='form1' onSubmit={handleSubmit}>
                 <label htmlFor='zip'>Zip Code</label>
-                <input type='text' name='zip' onChange={handleZip} value={zip}></input>
+                <input type='text' name='zip' onChange={handleZip} value={zip} placeholder='90210'></input>
                 <label htmlFor='state'>Country</label>
-                <input id='countryinput' type='text' name='state' onChange={handleState} value={state} placeholder='two letter code'></input>
+                <input id='countryinput' type='text' name='state' onChange={handleState} value={state} placeholder='US'></input>
                 <button id='addcitybttn' type='submit'>Add City </button>
             </form>
             {add ? 
