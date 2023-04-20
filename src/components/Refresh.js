@@ -27,7 +27,7 @@ const Refresh = (props) => {
                     url: city.url,
                     backgroundImageUrl: response.data.weather[0].id
                 }
-                axios.put(`http://localhost:3000/cities/${city._id}`, updatedCity).then(()=> {
+                axios.put(`https://serene-eyrie-94543.herokuapp.com/cities/${city._id}`, updatedCity).then(()=> {
                     props.getCities()
                 })
             })
