@@ -9,7 +9,7 @@ const App = () =>  {
  const [cities, setCities] = useState([])
 
  const getCities = () => {
-  axios.get('https://serene-eyrie-94543.herokuapp.com/cities').then((response) => {
+  axios.get('https://doms-weather-app-eee94282cb97.herokuapp.com/cities').then((response) => {
     setCities(response.data)
     console.log(response)
   })
