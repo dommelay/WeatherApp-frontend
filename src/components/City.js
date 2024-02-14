@@ -11,7 +11,7 @@ const City = (props) => {
     }
 
     const handleDelete = () => {
-        axios.delete(`https://serene-eyrie-94543.herokuapp.com/cities/${props.city._id}`).then(() => {
+        axios.delete(`https://doms-weather-app-eee94282cb97.herokuapp.com/cities/${props.city._id}`).then(() => {
             props.getCities();
         })
     }
@@ -36,7 +36,7 @@ const City = (props) => {
                 url: props.city.url,
                 backgroundImageUrl: response.data.weather[0].id
             }
-            axios.put(`https://serene-eyrie-94543.herokuapp.com/cities/${props.city._id}`, updatedCity).then(()=> {
+            axios.put(`https://doms-weather-app-eee94282cb97.herokuapp.com/cities/${props.city._id}`, updatedCity).then(()=> {
                 props.getCities()
             })
         })
